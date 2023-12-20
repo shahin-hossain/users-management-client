@@ -25,14 +25,14 @@ function App() {
       method: 'POST', // method বলে দেয়া হয়েছে, POST method ব্যবহার করা হয় ‍server এ post করার জন্য ।
 
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json' //কি ধরনের data যাবে backend এ তা বলে দেয়া হয়েছে header এর মধ্যে।
       },
       body: JSON.stringify(user), // body এর মধ্যে object কে json stringify করে পাঠানো হয়।
     })
       .then(res => res.json())
       .then(data => {
         console.log(data)
-        const newUser = [...users, data]; // আগের user এবং নিউ user
+        const newUser = [...users, data]; // আগের user এবং নিউ user কে একটা array এর মধ্যে রাখা হয়েছে।
         setUsers(newUser)
         from.reset()
       })
