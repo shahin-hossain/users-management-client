@@ -32,7 +32,11 @@ function App() {
       .then(res => res.json())
       .then(data => {
         console.log(data)
+        const newUser = [...users, data]; // আগের user এবং নিউ user
+        setUsers(newUser)
+        from.reset()
       })
+
 
   }
 
